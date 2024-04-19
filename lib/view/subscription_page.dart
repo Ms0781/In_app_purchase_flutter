@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:in_app_purchase_flutter/view/paywall_widget.dart';
@@ -32,33 +31,32 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                 fontSize: 18,
               ),),
               const Spacer(),
-              ElevatedButton(onPressed: (){
-               showModalBottomSheet(context: context, builder: (context){
-                 return const Padding(
-                   padding: EdgeInsets.all(10),
-                   child: Column(
-                     children: [
-                       OfferingWidget(
-                         title: 'Premium',
-                         amount: '10',
-                         description: 'User will get access of all premium features and additional 2 months of subscription.',),
-                       SizedBox(height: 10,),
-                       OfferingWidget(
-                         title: 'Premium',
-                         amount: '10',
-                         description: 'User will get access of all premium features and additional 2 months of subscription.',)
-                     ],
-                   ),
-                 );
-               });
-              },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                    )
-                ), child: Text("Change the weather",style: GoogleFonts.roboto(fontSize: 22,color: Colors.white,)),
-              )
+             Align(
+               alignment: Alignment.bottomCenter,
+               child:  ElevatedButton(onPressed: (){
+                 showModalBottomSheet(context: context, builder: (context){
+                   return const Padding(
+                     padding: EdgeInsets.all(10),
+                     child: Column(
+                       children: [
+                         OfferingWidget(
+                           title: 'Premium',
+                           amount: '10',
+                           description: 'User will get access of all premium features and additional 2 months of subscription.',),
+
+                       ],
+                     ),
+                   );
+                 });
+               },
+                 style: ElevatedButton.styleFrom(
+                     backgroundColor: Colors.red,
+                     shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(10)
+                     )
+                 ), child: Text("Change The BAR",style: GoogleFonts.roboto(fontSize: 22,color: Colors.white,)),
+               ),
+             )
             ],
           ),
         ),
