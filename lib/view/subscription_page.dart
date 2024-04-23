@@ -43,7 +43,6 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                            title: 'Premium',
                            amount: '10',
                            description: 'User will get access of all premium features and additional 2 months of subscription.',),
-
                        ],
                      ),
                    );
