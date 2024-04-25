@@ -53,7 +53,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                      shape: RoundedRectangleBorder(
                          borderRadius: BorderRadius.circular(10)
                      )
-                 ), child: Text("Change The BAR",style: GoogleFonts.roboto(fontSize: 22,color: Colors.white,)),
+                 ), child: Text("Change The bar",style: GoogleFonts.roboto(fontSize: 22,color: Colors.white,)),
                ),
              )
             ],
