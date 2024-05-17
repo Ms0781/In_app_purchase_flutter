@@ -38,6 +38,8 @@ dependencies:
   provider:
   in_app_purchase:
   google_fonts: 6.1.0
+  permission_handler:
+  fluttertoast:
 
 dev_dependencies:
   flutter_test:

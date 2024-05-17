@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:in_app_purchase_flutter/view/paywall_widget.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class SubscriptionPage extends StatefulWidget {
   const SubscriptionPage({super.key});
@@ -31,7 +33,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                 fontSize: 18,
               ),),
               const Spacer(),
-             Align(
+              Align(
                alignment: Alignment.bottomCenter,
                child:  ElevatedButton(onPressed: (){
                  showModalBottomSheet(context: context, builder: (context){

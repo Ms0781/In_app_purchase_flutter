@@ -27,7 +27,7 @@ class OfferingWidget extends StatelessWidget {
           ),
           const SizedBox(height: 10,),
           Text(description,
-            style: TextStyle(),
+            style: const TextStyle(),
           )
         ],
       ),
