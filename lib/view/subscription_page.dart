@@ -36,19 +36,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
               Align(
                alignment: Alignment.bottomCenter,
                child:  ElevatedButton(onPressed: (){
-                 showModalBottomSheet(context: context, builder: (context){
-                   return const Padding(
-                     padding: EdgeInsets.all(10),
-                     child: Column(
-                       children: [
-                         OfferingWidget(
-                           title: 'Premium',
-                           amount: '10',
-                           description: 'User will get access of all premium features and additional 2 months of subscription.',),
-                       ],
-                     ),
-                   );
-                 });
+
                },
                  style: ElevatedButton.styleFrom(
                      backgroundColor: Colors.red,

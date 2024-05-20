@@ -1,10 +1,10 @@
-import 'dart:io' as io;
 import 'package:flutter/material.dart';
 import 'package:in_app_purchase_flutter/controller/subscription_controller.dart';
 import 'package:in_app_purchase_flutter/utils/const.dart';
 import 'package:in_app_purchase_flutter/utils/store_config.dart';
 import 'package:in_app_purchase_flutter/view/subscription_page.dart';
 import 'package:provider/provider.dart';
+import 'dart:io' as io;
 
 void main() {
 
