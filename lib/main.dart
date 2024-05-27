@@ -1,19 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:in_app_purchase_flutter/controller/subscription_controller.dart';
-import 'package:in_app_purchase_flutter/utils/const.dart';
-import 'package:in_app_purchase_flutter/utils/store_config.dart';
-import 'package:in_app_purchase_flutter/view/subscription_page.dart';
+import 'package:in_app_purchase_flutter/purchases_flutter_library/controller/subscription_controller.dart';
+import 'package:in_app_purchase_flutter/purchases_flutter_library/view/subscription_page.dart';
 import 'package:provider/provider.dart';
-import 'dart:io' as io;
 
 void main() {
-
-  if(io.Platform.isIOS){
-    StoreConfig(store: Store.appleStore, apiKey: AppConstants.appleKey);
-  }else if(io.Platform.isAndroid){
-    StoreConfig(store: Store.googlePlay, apiKey: AppConstants.androidKey);
-  }
-
   runApp(const MyApp());
 }
 
