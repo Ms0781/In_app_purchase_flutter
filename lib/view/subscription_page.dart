@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:in_app_purchase_flutter/view/paywall_widget.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:purchases_flutter/models/offering_wrapper.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 
 class SubscriptionPage extends StatefulWidget {
   const SubscriptionPage({super.key});
@@ -35,20 +35,36 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
               const Spacer(),
               Align(
                alignment: Alignment.bottomCenter,
-               child:  ElevatedButton(onPressed: (){
-                 showModalBottomSheet(context: context, builder: (context){
-                   return const Padding(
-                     padding: EdgeInsets.all(10),
-                     child: Column(
-                       children: [
-                         OfferingWidget(
-                           title: 'Premium',
-                           amount: '10',
-                           description: 'User will get access of all premium features and additional 2 months of subscription.',),
-                       ],
-                     ),
-                   );
-                 });
+               child:  ElevatedButton(onPressed: () async{
+                 try{
+                   //
+
+                   Purchases.getOfferings().then((currentOfferings){
+                     Map<String,Offering> allOffering = currentOfferings.all;
+                     List<String> allOfferingKeys = allOffering.keys.toList();
+                     showModalBottomSheet(context: context, builder: (context){
+                       return allOfferingKeys.isNotEmpty ? Container(
+                         decoration: const BoxDecoration(
+                             borderRadius: BorderRadius.only(
+                                 topLeft: Radius.circular(10),
+                                 topRight: Radius.circular(10)
+                             ),
+                             color: Colors.white
+                         ),
+                         child: Column(
+                           mainAxisAlignment: MainAxisAlignment.start,
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: allOfferingKeys.map((e) {
+                             return StoreProductWidget(storeProduct: allOffering[e]!.availablePackages[0].storeProduct);
+                           }).toList(),
+                         ),
+                       ) : SizedBox();
+                     });
+                   });
+                 }catch(e){
+                   print("Error : $e");
+                 }
+
                },
                  style: ElevatedButton.styleFrom(
                      backgroundColor: Colors.red,

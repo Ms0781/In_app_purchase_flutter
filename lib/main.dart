@@ -5,15 +5,13 @@ import 'package:in_app_purchase_flutter/utils/const.dart';
 import 'package:in_app_purchase_flutter/utils/store_config.dart';
 import 'package:in_app_purchase_flutter/view/subscription_page.dart';
 import 'package:provider/provider.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
+import 'dart:io' as io;
 
-void main() {
 
-  if(io.Platform.isIOS){
-    StoreConfig(store: Store.appleStore, apiKey: AppConstants.appleKey);
-  }else if(io.Platform.isAndroid){
-    StoreConfig(store: Store.googlePlay, apiKey: AppConstants.androidKey);
-  }
-
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Purchases.configure(PurchasesConfiguration(io.Platform.isAndroid ? AppConstants.androidKey : AppConstants.appleKey));
   runApp(const MyApp());
 }
 
