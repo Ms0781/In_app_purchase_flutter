@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:in_app_purchase_flutter/view/paywall_widget.dart';
-import 'package:purchases_flutter/models/offering_wrapper.dart';
+import 'package:in_app_purchase_flutter/purchases_flutter_library/view/paywall_widget.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 class SubscriptionPage extends StatefulWidget {
